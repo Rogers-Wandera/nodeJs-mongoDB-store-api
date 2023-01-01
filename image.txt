@@ -1,0 +1,32 @@
+const imageSchema = new mongoose.Schema({
+  data: Buffer,
+  contentType: String,
+  filename: String,
+  caption: String
+});
+
+const Image = mongoose.model('Image', imageSchema);
+
+// fs
+
+const fs = require('fs');
+const imageData = fs.readFileSync('/path/to/image.jpg');
+
+// image 
+
+const image = new Image({
+  data: imageData,
+  contentType: 'image/jpeg',
+  filename: 'image.jpg',
+  caption: 'A beautiful sunset'
+});
+
+
+//save 
+
+const image = new Image({
+  data: imageData,
+  contentType: 'image/jpeg',
+  filename: 'image.jpg',
+  caption: 'A beautiful sunset'
+});
